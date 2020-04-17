@@ -10,7 +10,8 @@ function App() {
     return (
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/auth' component={Auth} />
+        <Route exact path='/registrar' component={Auth} />
+        <Route exact path='/login' component={Auth} />
         <Redirect path='*' to={Home} />
       </Switch>
     );

@@ -1,9 +1,18 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.div`
-  background: #ffffff;
+  background: ${(props) => props.theme.white};
   min-height: 100vh;
-  top: 0;
-  padding: 0 2rem;
-  width: calc(100% - 4rem);
+
+  ${media.greaterThan('medium')`
+    top: 0;
+  `}
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;

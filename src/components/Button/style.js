@@ -1,10 +1,9 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 const DefaultButton = styled.button`
   padding: 8px;
   font-size: 15px;
-  padding-left: 40px;
-  padding-right: 40px;
   display: block;
   box-shadow: 0 0 0 0 #5b3cc4;
   transition: all 0.25s ease;
@@ -12,11 +11,15 @@ const DefaultButton = styled.button`
   cursor: pointer;
   outline: none;
   min-height: 38px;
-  min-width: 150px;
+  width: 100px;
+
+  ${media.greaterThan('medium')`
+    width: 150px;
+  `}
 `;
 
 export const PrimaryButton = styled(DefaultButton)`
-  color: #fff;
+  color: ${(props) => props.theme.white};
   border: none;
   background: ${(props) => props.theme.primaryColor};
 
@@ -35,7 +38,7 @@ export const PrimaryGhostButton = styled(DefaultButton)`
 `;
 
 export const SecondaryButton = styled(DefaultButton)`
-  color: #fff;
+  color: ${(props) => props.theme.white};
   border: none;
   background: ${(props) => props.theme.secondaryColor};
 

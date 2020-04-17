@@ -5,12 +5,13 @@ export const theme = {
   secondaryColor: '#E15A97',
   purpleLightColor: '#f6f3fc',
   grayLightColor: '#e4eaf5',
-  title: '#5b5777',
+  grayPurple: '#5b5777',
+  white: '#fff',
 };
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    background: #f6f3fc;
+    background: #fff;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
   }
