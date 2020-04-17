@@ -5,11 +5,10 @@ export const theme = {
   secondaryColor: '#E15A97',
   purpleLightColor: '#f6f3fc',
   grayLightColor: '#e4eaf5',
+  title: '#5b5777',
 };
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-  
   body {
     background: #f6f3fc;
     margin: 0;
