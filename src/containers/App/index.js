@@ -12,7 +12,7 @@ function App() {
         <Route exact path='/' component={Home} />
         <Route exact path='/registrar' component={Auth} />
         <Route exact path='/login' component={Auth} />
-        <Redirect path='*' to={Home} />
+        <Redirect path='*' to='/' />
       </Switch>
     );
   }
