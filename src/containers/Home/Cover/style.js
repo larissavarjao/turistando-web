@@ -33,7 +33,6 @@ export const Phrases = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: ${(props) => props.theme.grayPurple};
   font-weight: 200;
   font-size: 40px;
   line-height: 1.25;
@@ -58,7 +57,6 @@ export const Subtitle = styled.h2`
   line-height: 1.3;
   font-weight: 300;
   margin: 0;
-  color: ${(props) => props.theme.grayPurple};
 `;
 
 export const Image = styled.img`

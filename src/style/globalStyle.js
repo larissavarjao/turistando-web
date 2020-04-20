@@ -5,6 +5,7 @@ export const theme = {
   secondaryColor: '#E15A97',
   purpleLightColor: '#f6f3fc',
   grayLightColor: '#EBEBEB',
+  grayDarkColor: '#D1D5DE',
   textColor: '#5b5777',
   white: '#fff',
   black: '#181919',

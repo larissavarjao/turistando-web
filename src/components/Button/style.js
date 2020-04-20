@@ -11,10 +11,12 @@ const DefaultButton = styled.button`
   cursor: pointer;
   outline: none;
   min-height: 38px;
-  width: 100px;
+  width: ${(props) => props.width || '100px'};
+  margin: ${(props) => props.margin || 0};
+  text-transform: uppercase;
 
   ${media.greaterThan('medium')`
-    width: 150px;
+    width: ${(props) => props.width || '150px'};
   `}
 `;
 

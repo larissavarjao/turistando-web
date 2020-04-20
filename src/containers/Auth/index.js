@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Register from './Register';
 import Login from './Login';
 import { Container, HalfViewImage, FormContainer, GoBack } from './style';
+import { Logo } from '../../components/Icons/Logo';
 
 function Auth() {
   return (
@@ -11,7 +12,7 @@ function Auth() {
       <HalfViewImage />
       <FormContainer>
         <GoBack to='/'>Voltar</GoBack>
-        <GoBack to='/'>Voltar</GoBack>
+        <Logo />
         <Switch>
           <Route path='/registrar' component={Register} />
           <Route path='/login' component={Login} />

@@ -12,3 +12,11 @@ export const LogoImageStyle = styled.img`
   width: 2rem;
   height: 2rem;
 `;
+
+export const LogoStyle = styled.div`
+  margin-right: 16px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

@@ -1,19 +1,26 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const InputContainer = styled.div`
   position: relative;
-  width: 250px;
+  width: ${(props) => props.width || '250px'};
   height: 44px;
   line-height: 44px;
+  margin: ${(props) => props.margin || '12px 0'};
+
+  ${media.lessThan('medium')`
+    margin: 12px 0;
+    width: 100%;
+  `};
 `;
 
 export const Label = styled.label`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  color: ${(props) => props.theme.grayLightColor};
-  transition: 0.6s all;
+  width: ${(props) => props.width || '100%'};
+  color: ${(props) => props.theme.grayDarkColor};
+  transition: 0.4s all;
   cursor: text;
 `;
 
@@ -22,9 +29,10 @@ export const Input = styled.input`
   border: 0;
   outline: 0;
   padding: 0.5rem 0;
-  border-bottom: 1.5px solid ${(props) => props.theme.grayLightColor};
+  border-bottom: 1.5px solid ${(props) => props.theme.grayDarkColor};
   box-shadow: none;
   color: ${(props) => props.theme.black};
+  font-size: 15px;
 
   &:invalid {
     outline: 0;
@@ -37,7 +45,7 @@ export const Input = styled.input`
 
   &:focus ~ label,
   &:valid ~ label {
-    font-size: 14px;
+    font-size: 12px;
     top: -24px;
     color: ${(props) => props.theme.primaryColor};
   }
