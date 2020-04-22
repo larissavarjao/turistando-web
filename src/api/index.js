@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { getUserLocalStorage } from '../utils/localStorage';
+import { getTokenLocalStorage } from '../utils/localStorage';
 
-const localStorageUser = getUserLocalStorage();
+const localStorageToken = getTokenLocalStorage();
 
 export default axios.create({
   baseURL: 'http://localhost:4444',
-  headers: localStorageUser
+  headers: localStorageToken
     ? {
-        Authorization: `Bearer ${localStorageUser}`,
+        Authorization: `Bearer ${localStorageToken}`,
       }
     : {},
 });
