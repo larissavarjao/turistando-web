@@ -21,7 +21,6 @@ export const isUserLogged = (state, setUserOnGlobalState, setTokenOnGlobalState)
 
   const isUserOnLocalHost = getUserLocalStorage();
   const isTokenOnLocalHost = getTokenLocalStorage();
-  console.log(isUserOnLocalHost);
 
   if (isUserOnLocalHost && isTokenOnLocalHost) {
     setUserOnGlobalState(isUserOnLocalHost);

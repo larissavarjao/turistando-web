@@ -22,8 +22,6 @@ function App() {
 
   const isLogged = isUserLogged(state, dispatchUser, dispatchToken);
 
-  console.log(state);
-
   if (!isLogged) {
     return (
       <Switch>

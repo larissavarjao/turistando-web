@@ -3,17 +3,18 @@ import media from 'styled-media-query';
 import { PrimaryGhostButton } from '../../../components/Button';
 
 export const HeaderContainer = styled.header`
-  width: 100vw;
-  min-height: 80px;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  top: 0;
-  margin-top: 1rem;
+  display: none;
 
   ${media.greaterThan('medium')`
+    width: 100vw;
+    min-height: 80px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    margin-top: 1rem;
     padding: 0 5rem;
     width: calc(100vw - 10rem);
     justify-content: space-between;
