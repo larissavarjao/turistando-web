@@ -37,6 +37,7 @@ export const Title = styled.h1`
   line-height: 1.25;
   margin: 0;
   text-align: center;
+  color: ${(props) => props.theme.grayPurple};
 
   span {
     font-weight: 500;
@@ -56,6 +57,7 @@ export const Subtitle = styled.h2`
   line-height: 1.3;
   font-weight: 300;
   margin: 0;
+  color: ${(props) => props.theme.grayPurple};
 `;
 
 export const Image = styled.img`

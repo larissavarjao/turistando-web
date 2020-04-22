@@ -6,9 +6,10 @@ export const theme = {
   purpleLightColor: '#f6f3fc',
   grayLightColor: '#EBEBEB',
   grayDarkColor: '#D1D5DE',
-  textColor: '#5b5777',
+  grayPurple: '#5b5777',
   white: '#fff',
   black: '#181919',
+  textColor: '#181919',
   warningColor: '#eec643',
   errorColor: '#ea3546',
   successColor: '#32e875',
@@ -19,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     background: #fff;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    color: #5b5777;
+    color: #181919;
   }
 
   code {

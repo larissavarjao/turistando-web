@@ -7,6 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   background: ${(props) => props.theme.white};
+  color: ${(props) => props.theme.grayPurple};
 
   ${media.lessThan('medium')`
     align-items: center;

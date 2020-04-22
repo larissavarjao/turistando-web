@@ -6,7 +6,7 @@ import { isUserLogged } from '../../utils/localStorage';
 import Home from '../Home';
 import Auth from '../Auth';
 
-import DashboardHome from '../Dashboard/Home';
+import Dashboard from '../Dashboard';
 
 function App() {
   const state = useContext(GlobalStateContext);
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <Switch>
-      <Route exact path='/dashboard' component={DashboardHome} />
+      <Route exact path='/dashboard' component={Dashboard} />
       <Redirect path='*' to='/dashboard' />
     </Switch>
   );
