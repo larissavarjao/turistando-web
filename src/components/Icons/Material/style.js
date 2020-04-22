@@ -4,7 +4,8 @@ export const MaterialIcon = styled.i`
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 36px; /* Preferred icon size */
+  font-size: ${(props) => props.size || '36px'};
+  color: ${(props) => props.color || props.theme.primaryColor};
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -13,14 +14,10 @@ export const MaterialIcon = styled.i`
   white-space: nowrap;
   direction: ltr;
 
-  /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
   font-feature-settings: 'liga';
 `;

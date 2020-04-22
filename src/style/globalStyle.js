@@ -9,6 +9,9 @@ export const theme = {
   textColor: '#5b5777',
   white: '#fff',
   black: '#181919',
+  warningColor: '#eec643',
+  errorColor: '#ea3546',
+  successColor: '#32e875',
 };
 
 export const GlobalStyle = createGlobalStyle`

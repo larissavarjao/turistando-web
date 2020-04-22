@@ -15,7 +15,7 @@ export const Logo = () => {
   return (
     <LogoStyle>
       <LogoImage />
-      <LogoWord />
+      <LogoWord margin='0 0 0 12px' />
     </LogoStyle>
   );
 };

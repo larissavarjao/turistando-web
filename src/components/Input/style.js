@@ -4,12 +4,10 @@ import media from 'styled-media-query';
 export const InputContainer = styled.div`
   position: relative;
   width: ${(props) => props.width || '250px'};
-  height: 44px;
-  line-height: 44px;
-  margin: ${(props) => props.margin || '12px 0'};
+  margin: ${(props) => props.margin || '0 0 24px 0'};
 
   ${media.lessThan('medium')`
-    margin: 12px 0;
+    margin: 0 0 24px 0;
     width: 100%;
   `};
 `;
@@ -46,7 +44,7 @@ export const Input = styled.input`
   &:focus ~ label,
   &:valid ~ label {
     font-size: 12px;
-    top: -24px;
+    top: -12px;
     color: ${(props) => props.theme.primaryColor};
   }
 `;
