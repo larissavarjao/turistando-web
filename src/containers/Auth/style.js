@@ -42,7 +42,7 @@ export const FormContainer = styled.div`
 `;
 
 export const GoBack = styled(Link)`
-  color: ${(props) => props.theme.textColor};
+  color: ${(props) => props.theme.text};
   margin-bottom: 3rem;
 `;
 

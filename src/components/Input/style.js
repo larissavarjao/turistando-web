@@ -17,7 +17,7 @@ export const Label = styled.label`
   top: 0;
   left: 0;
   width: ${(props) => props.width || '100%'};
-  color: ${(props) => props.theme.grayDarkColor};
+  color: ${(props) => props.theme.grayDark};
   transition: 0.4s all;
   cursor: text;
 `;
@@ -27,7 +27,7 @@ export const Input = styled.input`
   border: 0;
   outline: 0;
   padding: 0.5rem 0;
-  border-bottom: 1.5px solid ${(props) => props.theme.grayDarkColor};
+  border-bottom: 1.5px solid ${(props) => props.theme.grayDark};
   box-shadow: none;
   color: ${(props) => props.theme.black};
   font-size: 15px;

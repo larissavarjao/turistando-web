@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: ${(props) => props.theme.purpleLightColor};
+  background: ${(props) => props.theme.purpleLight};
   display: flex;
   flex-direction: row;
   width: 100%;
