@@ -37,7 +37,7 @@ export const NavLinkContainer = styled(NavLink)`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: calc(100% - 24px * 2);
+  width: calc(100% - 24px * 2 - 2px);
   text-decoration: none;
 
   &:nth-child(2) {
@@ -83,4 +83,14 @@ export const MenuOptionTitle = styled.span`
   color: ${(props) => props.theme.gray};
   font-size: 14px;
   display: ${(props) => (props.open ? 'block' : 'none')};
+  transform: ${(props) => (props.open ? 'scale(1)' : 'none')};
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+`;
+
+export const LogOut = styled.div`
+  svg {
+    fill: ${(props) => props.theme.gray};
+    margin-left: 24px;
+    cursor: pointer;
+  }
 `;

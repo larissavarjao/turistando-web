@@ -14,8 +14,12 @@ export const getTokenLocalStorage = () => {
   return localStorage.getItem('token');
 };
 
+export const clearLocalStorage = () => {
+  return localStorage.clear();
+};
+
 export const isUserLogged = (state, setUserOnGlobalState, setTokenOnGlobalState) => {
-  const isUserOnGlobalState = state.user;
+  const isUserOnGlobalState = state.user && Object.keys(state.user).length;
 
   if (isUserOnGlobalState) return true;
 

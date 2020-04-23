@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   MenuContainer,
   Logo,
@@ -6,9 +6,14 @@ import {
   MenuTopContainer,
   MaterialIconMenu,
   MenuOptionTitle,
+  LogOut,
 } from './style';
 import { Link } from '../../style/globalComponents';
-import { Travel, Dashboard, Route, Finance, Currency } from '../Icons/Menu';
+import { Travel, Dashboard, Route, Finance, Currency, Logout } from '../Icons/Menu';
+import { GlobalDispatchContext, GlobalStateContext } from '../../context/globalContext';
+import { clearLocalStorage } from '../../utils/localStorage';
+import { history } from '../../context/history';
+import Loading from '../Loading';
 
 const purpleLogo = require('../../assets/images/logo-invertida.png');
 
@@ -22,9 +27,20 @@ const menuOptions = [
 
 function Menu() {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useContext(GlobalDispatchContext);
+  const state = useContext(GlobalStateContext);
 
   const toggleOpen = () => {
     setOpen(!open);
+  };
+
+  const logOut = () => {
+    setLoading(true);
+    dispatch({ type: 'LOG_OUT_USER' });
+    clearLocalStorage();
+    history.push('/');
+    setLoading(false);
   };
 
   return (
@@ -50,6 +66,10 @@ function Menu() {
       <MaterialIconMenu open={open} onClick={toggleOpen}>
         menu_open
       </MaterialIconMenu>
+      <LogOut onClick={logOut}>
+        <Logout />
+      </LogOut>
+      {loading && <Loading />}
     </MenuContainer>
   );
 }

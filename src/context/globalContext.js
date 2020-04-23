@@ -22,6 +22,13 @@ function reducer(state, action) {
         token: action.payload,
       };
     }
+    case 'LOG_OUT_USER': {
+      return {
+        ...state,
+        user: {},
+        token: '',
+      };
+    }
     default:
       throw new Error('Bad Action Type');
   }
