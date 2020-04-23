@@ -1,5 +1,12 @@
-import React from 'react';
-import { MenuContainer, Logo, NavLinkContainer, MenuTopContainer } from './style';
+import React, { useState } from 'react';
+import {
+  MenuContainer,
+  Logo,
+  NavLinkContainer,
+  MenuTopContainer,
+  MaterialIconMenu,
+  MenuOptionTitle,
+} from './style';
 import { Link } from '../../style/globalComponents';
 import { Travel, Dashboard, Route, Finance, Currency } from '../Icons/Menu';
 
@@ -14,22 +21,35 @@ const menuOptions = [
 ];
 
 function Menu() {
+  const [open, setOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
+
   return (
-    <MenuContainer>
-      <MenuTopContainer>
+    <MenuContainer open={open}>
+      <MenuTopContainer open={open}>
         <Link to='/dashboard'>
           <Logo src={purpleLogo} alt='Logo para home' />
         </Link>
         <>
           {menuOptions.map((nav) => {
             return (
-              <NavLinkContainer key={nav.to} to={nav.to}>
+              <NavLinkContainer open={open} key={nav.to} to={nav.to}>
                 {nav.icon}
+                <MenuOptionTitle open={open}>{nav.title}</MenuOptionTitle>
               </NavLinkContainer>
             );
           })}
         </>
       </MenuTopContainer>
+      <MaterialIconMenu open={!open} onClick={toggleOpen}>
+        menu
+      </MaterialIconMenu>
+      <MaterialIconMenu open={open} onClick={toggleOpen}>
+        menu_open
+      </MaterialIconMenu>
     </MenuContainer>
   );
 }

@@ -36,6 +36,10 @@ function App() {
   return (
     <Switch>
       <Route exact path='/dashboard' component={Dashboard} />
+      <Route exact path='/viagem' component={Dashboard} />
+      <Route exact path='/roteiro' component={Dashboard} />
+      <Route exact path='/financeiro' component={Dashboard} />
+      <Route exact path='/cambio' component={Dashboard} />
       <Redirect path='*' to='/dashboard' />
     </Switch>
   );
