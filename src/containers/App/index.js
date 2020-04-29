@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { GlobalStateContext, GlobalDispatchContext } from '../../context/globalContext';
-import { isUserLogged } from '../../utils/localStorage';
+import { isUserLogged } from '../../utils/login';
 
 import Home from '../Home';
 import Auth from '../Auth';
@@ -37,6 +37,7 @@ function App() {
     <Switch>
       <Route exact path='/dashboard' component={Dashboard} />
       <Route exact path='/viagem' component={Dashboard} />
+      <Route exact path='/viagem/:id' component={Dashboard} />
       <Route exact path='/roteiro' component={Dashboard} />
       <Route exact path='/financeiro' component={Dashboard} />
       <Route exact path='/cambio' component={Dashboard} />
