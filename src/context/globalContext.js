@@ -6,6 +6,7 @@ export const GlobalDispatchContext = React.createContext();
 const initialState = {
   user: undefined,
   token: '',
+  travels: [],
 };
 
 function reducer(state, action) {
@@ -27,6 +28,12 @@ function reducer(state, action) {
         ...state,
         user: {},
         token: '',
+      };
+    }
+    case 'SET_TRAVELS': {
+      return {
+        ...state,
+        travels: action.payload,
       };
     }
     default:
