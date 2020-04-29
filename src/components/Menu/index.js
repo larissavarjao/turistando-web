@@ -10,10 +10,10 @@ import {
 } from './style';
 import { Link } from '../../style/globalComponents';
 import { Travel, Dashboard, Route, Finance, Currency, Logout } from '../Icons/Menu';
-import { GlobalDispatchContext, GlobalStateContext } from '../../context/globalContext';
+import { GlobalDispatchContext } from '../../context/globalContext';
 import { clearLocalStorage } from '../../utils/localStorage';
 import { history } from '../../context/history';
-import Loading from '../Loading';
+import { Loading } from '../ScreenCases';
 
 const purpleLogo = require('../../assets/images/logo-invertida.png');
 
@@ -29,7 +29,6 @@ function Menu() {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const dispatch = useContext(GlobalDispatchContext);
-  const state = useContext(GlobalStateContext);
 
   const toggleOpen = () => {
     setOpen(!open);

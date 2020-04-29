@@ -6,7 +6,7 @@ import { PrimaryButton } from '../../../components/Button';
 import { FormTitle, FormSubTitle } from '../style';
 import { Container, FormRow } from './style';
 import { createUser } from '../../../api/user';
-import Loading from '../../../components/Loading';
+import { Loading } from '../../../components/ScreenCases';
 import { ErrorFormMessage, ErrorMessage } from '../../../components/Message';
 import { history } from '../../../context/history';
 

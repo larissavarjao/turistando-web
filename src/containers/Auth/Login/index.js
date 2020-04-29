@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { loginUser } from '../../../api/user';
 import { PrimaryButton } from '../../../components/Button';
 import { Input, InputContainer, Label } from '../../../components/Input';
-import Loading from '../../../components/Loading';
+import { Loading } from '../../../components/ScreenCases';
 import { ErrorFormMessage, ErrorMessage } from '../../../components/Message';
 import { history } from '../../../context/history';
 import { isEmailValid } from '../../../utils/emailValidator';
