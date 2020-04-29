@@ -14,5 +14,5 @@ export const RightContainer = styled.div`
 `;
 
 export const DashboardContainer = styled.div`
-  padding: 32px;
+  padding: 32px 42px;
 `;

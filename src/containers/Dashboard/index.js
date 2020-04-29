@@ -18,6 +18,7 @@ function Dashboard() {
         <DashboardContainer>
           <Switch>
             <Route path='/dashboard' component={DashboardHome} />
+            <Route path='/viagem/:id' component={Travel} />
             <Route path='/viagem' component={Travel} />
             <Route path='/roteiro' component={RouteComponent} />
             <Route path='/financeiro' component={Finance} />

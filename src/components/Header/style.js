@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   background: ${(props) => props.theme.white};
-  width: calc(100% - 24px * 2);
+  width: calc(100% - 42px * 2);
   height: 64px;
   border-left: 1px solid ${(props) => props.theme.grayLight};
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 42px;
 `;
 
 export const Account = styled.img`

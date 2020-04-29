@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     background: #fff;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    color: #181919;
+    color: #3c3f51;
   }
 
   code {

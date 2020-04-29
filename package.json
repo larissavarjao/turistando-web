@@ -16,7 +16,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.0",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "use-combined-reducers": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
