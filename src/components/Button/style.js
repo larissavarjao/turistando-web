@@ -29,6 +29,7 @@ export const PrimaryButton = styled(DefaultButton)`
     box-shadow: 0 9px 28px -9px ${(props) => props.theme.primaryColor};
   }
 `;
+
 export const PrimaryGhostButton = styled(DefaultButton)`
   color: ${(props) => props.theme.primaryColor};
   background: transparent;
@@ -56,4 +57,24 @@ export const SecondaryGhostButton = styled(DefaultButton)`
   &:hover {
     box-shadow: 0 9px 28px -9px ${(props) => props.theme.secondaryColor};
   }
+`;
+
+export const RoundedButtonStyle = styled(DefaultButton)`
+  color: ${(props) => props.theme.white};
+  border: none;
+  background: ${(props) => props.theme.primaryColor};
+  width: 44px !important;
+  height: 44px;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 9px 28px -9px ${(props) => props.theme.primaryColor};
+  }
+`;
+
+export const RoundedSign = styled.span`
+  font-size: 27px;
+  right: 13px;
+  top: 5px;
+  position: absolute;
 `;
