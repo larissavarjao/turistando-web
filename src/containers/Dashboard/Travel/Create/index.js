@@ -4,13 +4,14 @@ import { PageHeader } from '../../../../components/Header';
 import { Title } from '../../../../components/Typography';
 import { Input, InputContainer, Label } from '../../../../components/Input';
 import { ErrorFormMessage } from '../../../../components/Message';
+import { CreateTravelsContainer } from './style';
 
 function TravelCreate() {
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState('');
 
   return (
-    <div>
+    <CreateTravelsContainer>
       <PageHeader>
         <Title>Criar Viagem</Title>
       </PageHeader>
@@ -27,7 +28,7 @@ function TravelCreate() {
           {nameError && <ErrorFormMessage message={nameError} />}
         </InputContainer>
       </div>
-    </div>
+    </CreateTravelsContainer>
   );
 }
 

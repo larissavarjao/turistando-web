@@ -17,31 +17,30 @@ function TravelHome() {
   const startLoading = () => setLoading(true);
   const endLoading = () => setLoading(false);
 
-  const verifyDataAndSetUserTravels = (travelsUser) => travelsUser.data && setTravels(travelsUser.data);
+  const verifyDataAndSetUserTravels = (travelsUser) =>
+    travelsUser.data && setTravels(travelsUser.data);
 
   const getAllUserTravels = async () => {
     try {
       const travelsUser = await getAllTravels(state.user.id);
 
       verifyDataAndSetUserTravels(travelsUser);
-    } catch(err) {
+    } catch (err) {
       setError('Ocorreu um erro ao carregar viagens.');
     }
-  }
+  };
 
   const getTravels = async () => {
     startLoading();
 
-    state.user && await getAllUserTravels();
-    
+    state.user && (await getAllUserTravels());
+
     endLoading();
   };
 
   useEffect(() => {
     getTravels();
-
-    // eslint-disable-next-line
-  }, [state.user]);
+  }, []);
 
   return (
     <Container>
@@ -50,9 +49,9 @@ function TravelHome() {
         <RoundedButton onClick={() => history.push('/viagem/criar')} />
       </PageHeader>
       {loading && <Loading />}
-      {error && <Error message='Ocorreu um erro ao carregar viagens.' />}
+      {error && <Error message="Ocorreu um erro ao carregar viagens." />}
       {travels && travels.length === 0 && (
-        <Empty message='Você não possui viagens. Para adicionar, só clicar no botão acima.' />
+        <Empty message="Você não possui viagens. Para adicionar, só clicar no botão acima." />
       )}
       {travels && travels.length > 0 && (
         <div>

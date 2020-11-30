@@ -17,11 +17,11 @@ function Dashboard() {
         <Header />
         <DashboardContainer>
           <Switch>
-            <Route path='/dashboard' component={DashboardHome} />
-            <Route path='/viagem' component={Travel} />
-            <Route path='/roteiro' component={RouteComponent} />
-            <Route path='/financeiro' component={Finance} />
-            <Route path='/cambio' component={Currency} />
+            <Route path="/dashboard" component={DashboardHome} />
+            <Route path="/viagem" component={Travel} />
+            <Route path="/roteiro" component={RouteComponent} />
+            <Route path="/financeiro" component={Finance} />
+            <Route path="/cambio" component={Currency} />
           </Switch>
         </DashboardContainer>
       </RightContainer>
