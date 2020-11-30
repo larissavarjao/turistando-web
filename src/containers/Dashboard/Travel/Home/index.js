@@ -2,8 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { GlobalStateContext } from '../../../../context/globalContext';
 import { getAllTravels } from '../../../../api/travel';
 import { Loading, Error, Empty } from '../../../../components/ScreenCases';
-import { Container, Header, Title } from './style';
+import { Container } from './style';
 import { RoundedButton } from '../../../../components/Button';
+import { PageHeader } from '../../../../components/Header';
+import { Title } from '../../../../components/Typography';
+import { history } from '../../../../context/history';
 
 function TravelHome() {
   const state = useContext(GlobalStateContext);
@@ -11,32 +14,41 @@ function TravelHome() {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
+  const startLoading = () => setLoading(true);
+  const endLoading = () => setLoading(false);
+
+  const verifyDataAndSetUserTravels = (travelsUser) => travelsUser.data && setTravels(travelsUser.data);
+
+  const getAllUserTravels = async () => {
+    try {
+      const travelsUser = await getAllTravels(state.user.id);
+
+      verifyDataAndSetUserTravels(travelsUser);
+    } catch(err) {
+      setError('Ocorreu um erro ao carregar viagens.');
+    }
+  }
+
+  const getTravels = async () => {
+    startLoading();
+
+    state.user && await getAllUserTravels();
+    
+    endLoading();
+  };
+
   useEffect(() => {
-    const getTravels = async () => {
-      setLoading(true);
-      if (state.user) {
-        const travelsUser = await getAllTravels(state.user.id);
-
-        if (travelsUser.data) {
-          setTravels(travelsUser.data);
-        }
-
-        if (travelsUser.message) {
-          setError('Ocorreu um erro ao carregar viagens.');
-        }
-      }
-      setLoading(false);
-    };
-
     getTravels();
+
+    // eslint-disable-next-line
   }, [state.user]);
 
   return (
     <Container>
-      <Header>
+      <PageHeader>
         <Title>Viagem</Title>
-        <RoundedButton />
-      </Header>
+        <RoundedButton onClick={() => history.push('/viagem/criar')} />
+      </PageHeader>
       {loading && <Loading />}
       {error && <Error message='Ocorreu um erro ao carregar viagens.' />}
       {travels && travels.length === 0 && (
