@@ -20,3 +20,10 @@ export const Account = styled.img`
   padding: 1px;
   cursor: pointer;
 `;
+
+export const PageHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
