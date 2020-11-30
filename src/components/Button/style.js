@@ -74,7 +74,4 @@ export const RoundedButtonStyle = styled(DefaultButton)`
 
 export const RoundedSign = styled.span`
   font-size: 27px;
-  right: 13px;
-  top: 5px;
-  position: absolute;
 `;
