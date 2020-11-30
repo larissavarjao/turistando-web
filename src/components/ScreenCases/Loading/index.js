@@ -6,7 +6,12 @@ import { LoadingContainer } from './style';
 export function Loading() {
   return (
     <LoadingContainer>
-      <ReactLoading type='spinningBubbles' color={theme.primaryColor} height={50} width={50} />
+      <ReactLoading
+        type="spinningBubbles"
+        color={theme.primaryColor}
+        height={50}
+        width={50}
+      />
     </LoadingContainer>
   );
 }

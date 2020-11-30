@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { GlobalStateContext, GlobalDispatchContext } from '../../context/globalContext';
+import {
+  GlobalStateContext,
+  GlobalDispatchContext,
+} from '../../context/globalContext';
 import { isUserLogged } from '../../utils/login';
 
 import Home from '../Home';
@@ -25,23 +28,23 @@ function App() {
   if (!isLogged) {
     return (
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/registrar' component={Auth} />
-        <Route exact path='/login' component={Auth} />
-        <Redirect path='*' to='/' />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/registrar" component={Auth} />
+        <Route exact path="/login" component={Auth} />
+        <Redirect path="*" to="/" />
       </Switch>
     );
   }
 
   return (
     <Switch>
-      <Route exact path='/dashboard' component={Dashboard} />
-      <Route exact path='/viagem' component={Dashboard} />
-      <Route exact path='/viagem/:id' component={Dashboard} />
-      <Route exact path='/roteiro' component={Dashboard} />
-      <Route exact path='/financeiro' component={Dashboard} />
-      <Route exact path='/cambio' component={Dashboard} />
-      <Redirect path='*' to='/dashboard' />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/viagem" component={Dashboard} />
+      <Route exact path="/viagem/:id" component={Dashboard} />
+      <Route exact path="/roteiro" component={Dashboard} />
+      <Route exact path="/financeiro" component={Dashboard} />
+      <Route exact path="/cambio" component={Dashboard} />
+      <Redirect path="*" to="/dashboard" />
     </Switch>
   );
 }

@@ -23,14 +23,14 @@ const Cover = () => {
         </Title>
         <Subtitle>Venha voar com a gente</Subtitle>
         <Apps>
-          <AppleImage src={apple} alt='link para aplicativo na app store' />
+          <AppleImage src={apple} alt="link para aplicativo na app store" />
           <GoogleImage
             src={google}
-            alt='link para aplicativo na google play store'
+            alt="link para aplicativo na google play store"
           />
         </Apps>
       </Phrases>
-      <Image src={spaceMan} alt='Space man' />
+      <Image src={spaceMan} alt="Space man" />
     </Container>
   );
 };

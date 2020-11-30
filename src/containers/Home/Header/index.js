@@ -10,13 +10,13 @@ function Header() {
     <HeaderContainer>
       <Logo>
         <LogoImage />
-        <LogoWord margin='0 0 0 12px' />
+        <LogoWord margin="0 0 0 12px" />
       </Logo>
       <Buttons>
-        <Link to='/registrar'>
+        <Link to="/registrar">
           <PrimaryGhostButtonWithMargin>Registrar</PrimaryGhostButtonWithMargin>
         </Link>
-        <Link to='/login'>
+        <Link to="/login">
           <PrimaryButton>Login</PrimaryButton>
         </Link>
       </Buttons>

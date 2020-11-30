@@ -9,7 +9,14 @@ import {
   LogOut,
 } from './style';
 import { Link } from '../../style/globalComponents';
-import { Travel, Dashboard, Route, Finance, Currency, Logout } from '../Icons/Menu';
+import {
+  Travel,
+  Dashboard,
+  Route,
+  Finance,
+  Currency,
+  Logout,
+} from '../Icons/Menu';
 import { GlobalDispatchContext } from '../../context/globalContext';
 import { clearLocalStorage } from '../../utils/localStorage';
 import { history } from '../../context/history';
@@ -45,8 +52,8 @@ function Menu() {
   return (
     <MenuContainer open={open}>
       <MenuTopContainer open={open}>
-        <Link to='/dashboard'>
-          <Logo src={purpleLogo} alt='Logo para home' />
+        <Link to="/dashboard">
+          <Logo src={purpleLogo} alt="Logo para home" />
         </Link>
         <>
           {menuOptions.map((nav) => {

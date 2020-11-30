@@ -46,7 +46,9 @@ const GlobalContextProvider = ({ children }) => {
 
   return (
     <GlobalStateContext.Provider value={state}>
-      <GlobalDispatchContext.Provider value={dispatch}>{children}</GlobalDispatchContext.Provider>
+      <GlobalDispatchContext.Provider value={dispatch}>
+        {children}
+      </GlobalDispatchContext.Provider>
     </GlobalStateContext.Provider>
   );
 };

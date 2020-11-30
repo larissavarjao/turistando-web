@@ -1,7 +1,15 @@
-import { getUserLocalStorage, getTokenLocalStorage, clearLocalStorage } from './localStorage';
+import {
+  getUserLocalStorage,
+  getTokenLocalStorage,
+  clearLocalStorage,
+} from './localStorage';
 import { history } from '../context/history';
 
-export const isUserLogged = (state, setUserOnGlobalState, setTokenOnGlobalState) => {
+export const isUserLogged = (
+  state,
+  setUserOnGlobalState,
+  setTokenOnGlobalState
+) => {
   const isUserOnGlobalState = state.user && Object.keys(state.user).length;
 
   if (isUserOnGlobalState) return true;

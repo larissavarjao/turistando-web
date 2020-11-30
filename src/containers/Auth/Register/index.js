@@ -60,53 +60,55 @@ function Register() {
       {!error && (
         <>
           <FormTitle>Cadastro</FormTitle>
-          <FormSubTitle>Preencha os campos para se cadastrar na plataforma.</FormSubTitle>
+          <FormSubTitle>
+            Preencha os campos para se cadastrar na plataforma.
+          </FormSubTitle>
           <FormRow>
             <InputContainer>
               <Input
-                type='text'
-                id='firstName'
+                type="text"
+                id="firstName"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
               />
-              <Label htmlFor='firstName'>Nome</Label>
+              <Label htmlFor="firstName">Nome</Label>
               {firstNameError && <ErrorFormMessage message={firstNameError} />}
             </InputContainer>
-            <InputContainer margin='0 0 24px 24px'>
+            <InputContainer margin="0 0 24px 24px">
               <Input
-                type='text'
-                id='lastName'
+                type="text"
+                id="lastName"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
               />
-              <Label htmlFor='lastName'>Sobrenome</Label>
+              <Label htmlFor="lastName">Sobrenome</Label>
             </InputContainer>
           </FormRow>
-          <InputContainer width='100%'>
+          <InputContainer width="100%">
             <Input
-              type='text'
-              id='email'
+              type="text"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <Label htmlFor='email'>E-mail</Label>
+            <Label htmlFor="email">E-mail</Label>
             {emailError && <ErrorFormMessage message={emailError} />}
           </InputContainer>
-          <InputContainer width='100%'>
+          <InputContainer width="100%">
             <Input
-              type='password'
-              id='password'
+              type="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <Label htmlFor='password'>Senha</Label>
+            <Label htmlFor="password">Senha</Label>
             {passwordError && <ErrorFormMessage message={passwordError} />}
           </InputContainer>
-          <PrimaryButton width='100%' margin='24px 0' onClick={onSubmit}>
+          <PrimaryButton width="100%" margin="24px 0" onClick={onSubmit}>
             Cadastrar
           </PrimaryButton>
         </>

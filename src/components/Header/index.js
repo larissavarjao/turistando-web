@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <HeaderContainer>
-      <Account src={avatar} alt='imagem do usuário para configurar avatar' />
+      <Account src={avatar} alt="imagem do usuário para configurar avatar" />
     </HeaderContainer>
   );
 }

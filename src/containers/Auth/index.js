@@ -11,11 +11,11 @@ function Auth() {
     <Container>
       <HalfViewImage />
       <FormContainer>
-        <GoBack to='/'>Voltar</GoBack>
+        <GoBack to="/">Voltar</GoBack>
         <Logo />
         <Switch>
-          <Route path='/registrar' component={Register} />
-          <Route path='/login' component={Login} />
+          <Route path="/registrar" component={Register} />
+          <Route path="/login" component={Login} />
         </Switch>
       </FormContainer>
     </Container>

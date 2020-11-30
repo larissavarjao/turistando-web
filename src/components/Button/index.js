@@ -9,4 +9,9 @@ export const RoundedButton = (props) => {
   );
 };
 
-export { PrimaryButton, SecondaryButton, PrimaryGhostButton, SecondaryGhostButton } from './style';
+export {
+  PrimaryButton,
+  SecondaryButton,
+  PrimaryGhostButton,
+  SecondaryGhostButton,
+} from './style';

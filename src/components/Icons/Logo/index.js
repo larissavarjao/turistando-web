@@ -8,14 +8,14 @@ export const LogoWord = (props) => {
 };
 
 export const LogoImage = () => {
-  return <LogoImageStyle src={logo} alt='imagem da logo de um balão' />;
+  return <LogoImageStyle src={logo} alt="imagem da logo de um balão" />;
 };
 
 export const Logo = () => {
   return (
     <LogoStyle>
       <LogoImage />
-      <LogoWord margin='0 0 0 12px' />
+      <LogoWord margin="0 0 0 12px" />
     </LogoStyle>
   );
 };

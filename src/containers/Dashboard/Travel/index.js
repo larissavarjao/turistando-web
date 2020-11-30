@@ -9,9 +9,9 @@ function Travel() {
   return (
     <TravelContainer>
       <Switch>
-        <Route path='/viagem/criar' component={TravelCreate} />
-        <Route path='/viagem/:id' component={TravelDetails} />
-        <Route path='/viagem' component={TravelHome} />
+        <Route path="/viagem/criar" component={TravelCreate} />
+        <Route path="/viagem/:id" component={TravelDetails} />
+        <Route path="/viagem" component={TravelHome} />
       </Switch>
     </TravelContainer>
   );

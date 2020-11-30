@@ -6,7 +6,10 @@ import { Loading } from '../../../components/ScreenCases';
 import { ErrorFormMessage, ErrorMessage } from '../../../components/Message';
 import { history } from '../../../context/history';
 import { isEmailValid } from '../../../utils/emailValidator';
-import { setTokenLocalStorage, setUserLocalStorage } from '../../../utils/localStorage';
+import {
+  setTokenLocalStorage,
+  setUserLocalStorage,
+} from '../../../utils/localStorage';
 import { FormSubTitle, FormTitle } from '../style';
 import { Container } from './style';
 import { GlobalDispatchContext } from '../../../context/globalContext';
@@ -64,30 +67,32 @@ function Login() {
       {!error && (
         <>
           <FormTitle>Login</FormTitle>
-          <FormSubTitle>Preencha seu email e senha para entrar na plataforma.</FormSubTitle>
-          <InputContainer width='100%'>
+          <FormSubTitle>
+            Preencha seu email e senha para entrar na plataforma.
+          </FormSubTitle>
+          <InputContainer width="100%">
             <Input
-              type='text'
-              id='email'
+              type="text"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <Label htmlFor='email'>E-mail</Label>
+            <Label htmlFor="email">E-mail</Label>
             {emailError && <ErrorFormMessage message={emailError} />}
           </InputContainer>
-          <InputContainer width='100%'>
+          <InputContainer width="100%">
             <Input
-              type='password'
-              id='password'
+              type="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <Label htmlFor='password'>Senha</Label>
+            <Label htmlFor="password">Senha</Label>
             {passwordError && <ErrorFormMessage message={passwordError} />}
           </InputContainer>
-          <PrimaryButton width='100%' margin='24px 0' onClick={onSubmit}>
+          <PrimaryButton width="100%" margin="24px 0" onClick={onSubmit}>
             Entrar
           </PrimaryButton>
         </>
