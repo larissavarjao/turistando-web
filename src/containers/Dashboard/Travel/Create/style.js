@@ -5,3 +5,9 @@ export const CreateTravelsContainer = styled.div`
   border-radius: 8px;
   padding: 24px;
 `;
+
+export const CreateTravelsRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+`;

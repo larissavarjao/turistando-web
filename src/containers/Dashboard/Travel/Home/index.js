@@ -20,27 +20,27 @@ function TravelHome() {
   const verifyDataAndSetUserTravels = (travelsUser) =>
     travelsUser.data && setTravels(travelsUser.data);
 
-  const getAllUserTravels = async () => {
-    try {
-      const travelsUser = await getAllTravels(state.user.id);
-
-      verifyDataAndSetUserTravels(travelsUser);
-    } catch (err) {
-      setError('Ocorreu um erro ao carregar viagens.');
-    }
-  };
-
-  const getTravels = async () => {
-    startLoading();
-
-    state.user && (await getAllUserTravels());
-
-    endLoading();
-  };
-
   useEffect(() => {
+    const getAllUserTravels = async () => {
+      try {
+        const travelsUser = await getAllTravels(state.user.id);
+
+        verifyDataAndSetUserTravels(travelsUser);
+      } catch (err) {
+        setError('Ocorreu um erro ao carregar viagens.');
+      }
+    };
+
+    const getTravels = async () => {
+      startLoading();
+
+      state.user && (await getAllUserTravels());
+
+      endLoading();
+    };
+
     getTravels();
-  }, []);
+  }, [state.user]);
 
   return (
     <Container>
