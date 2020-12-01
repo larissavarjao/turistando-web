@@ -1,15 +1,12 @@
 import React from 'react';
-import { HeaderContainer, Account } from './style';
-import { MaterialIcon } from '../Icons/Material/style';
+import { HeaderContainer, Account, MaterialIconMenu } from './style';
 
-const bob = require('../../assets/images/bob.jpg');
+const avatar = require('../../assets/images/bob.jpg');
 
 function Header({ turnOnMenu }) {
-  const avatar = bob;
-
   return (
     <HeaderContainer>
-      <MaterialIcon onClick={turnOnMenu}>menu</MaterialIcon>
+      <MaterialIconMenu onClick={turnOnMenu}>menu</MaterialIconMenu>
       <Account src={avatar} alt="imagem do usuário para configurar avatar" />
     </HeaderContainer>
   );
