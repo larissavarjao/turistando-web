@@ -14,7 +14,7 @@ import { clearLocalStorage } from '../../utils/localStorage';
 import { history } from '../../context/history';
 
 function Dashboard() {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const dispatch = useContext(GlobalDispatchContext);
 
