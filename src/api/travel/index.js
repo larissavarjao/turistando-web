@@ -19,3 +19,13 @@ export const getAllTravels = async (userId) => {
     return new Error();
   }
 };
+
+export const getTravelById = async (travelId) => {
+  try {
+    return await api.get(`/travels/${travelId}`);
+  } catch (err) {
+    console.log(err);
+    checkErrors(err.message);
+    return new Error();
+  }
+};

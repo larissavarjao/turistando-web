@@ -53,7 +53,7 @@ function TravelHome() {
         <RoundedButton onClick={() => history.push('/viagem/criar')} />
       </PageHeader>
       {loading && <Loading />}
-      {error && <Error message="Ocorreu um erro ao carregar viagens." />}
+      {error && <Error message={error} />}
       {travels && travels.length === 0 && (
         <Empty message="Você não possui viagens. Para adicionar, só clicar no botão acima." />
       )}
