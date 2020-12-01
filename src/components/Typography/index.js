@@ -1,1 +1,1 @@
-export { Title } from './style';
+export { Title, SubSubTitle } from './style';
