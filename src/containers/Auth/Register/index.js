@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import { InputContainer, Input, Label } from '../../../components/Input';
+import { InputLabel } from '../../../components/Input';
 import { isEmailValid } from '../../../utils/emailValidator';
 import { PrimaryButton } from '../../../components/Button';
 import { FormTitle, FormSubTitle } from '../style';
 import { Container, FormRow } from './style';
 import { createUser } from '../../../api/user';
 import { Loading } from '../../../components/ScreenCases';
-import { ErrorFormMessage, ErrorMessage } from '../../../components/Message';
+import { ErrorMessage } from '../../../components/Message';
 import { history } from '../../../context/history';
 
 function Register() {
@@ -64,50 +64,48 @@ function Register() {
             Preencha os campos para se cadastrar na plataforma.
           </FormSubTitle>
           <FormRow>
-            <InputContainer>
-              <Input
-                type="text"
-                id="firstName"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
-              <Label htmlFor="firstName">Nome</Label>
-              {firstNameError && <ErrorFormMessage message={firstNameError} />}
-            </InputContainer>
-            <InputContainer margin="0 0 24px 24px">
-              <Input
-                type="text"
-                id="lastName"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-              />
-              <Label htmlFor="lastName">Sobrenome</Label>
-            </InputContainer>
-          </FormRow>
-          <InputContainer width="100%">
-            <Input
+            <InputLabel
               type="text"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              id="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
               required
+              error={firstNameError}
+              label="Nome"
             />
-            <Label htmlFor="email">E-mail</Label>
-            {emailError && <ErrorFormMessage message={emailError} />}
-          </InputContainer>
-          <InputContainer width="100%">
-            <Input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+            <InputLabel
+              type="text"
+              id="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               required
+              margin="0 0 24px 24px"
+              label="Sobrenome"
+              htmlFor="lastName"
             />
-            <Label htmlFor="password">Senha</Label>
-            {passwordError && <ErrorFormMessage message={passwordError} />}
-          </InputContainer>
+          </FormRow>
+          <InputLabel
+            width="100%"
+            type="text"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            label="E-mail"
+            htmlFor="email"
+            error={emailError}
+          />
+          <InputLabel
+            width="100%"
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            label="Senha"
+            htmlFor="password"
+            error={passwordError}
+          />
           <PrimaryButton width="100%" margin="24px 0" onClick={onSubmit}>
             Cadastrar
           </PrimaryButton>

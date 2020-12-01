@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { loginUser } from '../../../api/user';
 import { PrimaryButton } from '../../../components/Button';
-import { Input, InputContainer, Label } from '../../../components/Input';
+import { InputLabel } from '../../../components/Input';
 import { Loading } from '../../../components/ScreenCases';
-import { ErrorFormMessage, ErrorMessage } from '../../../components/Message';
+import { ErrorMessage } from '../../../components/Message';
 import { history } from '../../../context/history';
 import { isEmailValid } from '../../../utils/emailValidator';
 import {
@@ -70,28 +70,28 @@ function Login() {
           <FormSubTitle>
             Preencha seu email e senha para entrar na plataforma.
           </FormSubTitle>
-          <InputContainer width="100%">
-            <Input
-              type="text"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <Label htmlFor="email">E-mail</Label>
-            {emailError && <ErrorFormMessage message={emailError} />}
-          </InputContainer>
-          <InputContainer width="100%">
-            <Input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <Label htmlFor="password">Senha</Label>
-            {passwordError && <ErrorFormMessage message={passwordError} />}
-          </InputContainer>
+          <InputLabel
+            width="100%"
+            type="text"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            label="E-mail"
+            htmlFor="email"
+            error={emailError}
+          />
+          <InputLabel
+            width="100%"
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            label="Senha"
+            htmlFor="password"
+            error={passwordError}
+          />
           <PrimaryButton width="100%" margin="24px 0" onClick={onSubmit}>
             Entrar
           </PrimaryButton>
