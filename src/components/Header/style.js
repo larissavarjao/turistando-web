@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const HeaderContainer = styled.div`
   background: ${(props) => props.theme.white};
@@ -7,9 +8,13 @@ export const HeaderContainer = styled.div`
   border-left: 1px solid ${(props) => props.theme.grayLight};
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 0 42px;
+
+  ${media.greaterThan('medium')`
+    justify-content: flex-end;
+  `};
 `;
 
 export const Account = styled.img`

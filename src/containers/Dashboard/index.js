@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
@@ -9,12 +9,41 @@ import RouteComponent from './Route';
 import Finance from './Finance';
 import Currency from './Currency';
 
+import { GlobalDispatchContext } from '../../context/globalContext';
+import { clearLocalStorage } from '../../utils/localStorage';
+import { history } from '../../context/history';
+
 function Dashboard() {
+  const [menuOpen, setMenuOpen] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useContext(GlobalDispatchContext);
+
+  const toggleMenuOpen = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const turnOffMenu = () => setMenuOpen(false);
+  const turnOnMenu = () => setMenuOpen(true);
+
+  const logOut = () => {
+    setLoading(true);
+    dispatch({ type: 'LOG_OUT_USER' });
+    clearLocalStorage();
+    history.push('/');
+    setLoading(false);
+  };
+
   return (
     <Container>
-      <Menu />
+      <Menu
+        menuOpen={menuOpen}
+        toggleMenuOpen={toggleMenuOpen}
+        logOut={logOut}
+        loading={loading}
+        turnOffMenu={turnOffMenu}
+      />
       <RightContainer>
-        <Header />
+        <Header menuOpen={menuOpen} turnOnMenu={turnOnMenu} />
         <DashboardContainer>
           <Switch>
             <Route path="/dashboard" component={DashboardHome} />

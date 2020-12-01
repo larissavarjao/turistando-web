@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import {
   MenuContainer,
   Logo,
@@ -7,6 +7,7 @@ import {
   MaterialIconMenu,
   MenuOptionTitle,
   LogOut,
+  MaterialIconClose,
 } from './style';
 import { Link } from '../../style/globalComponents';
 import {
@@ -17,9 +18,6 @@ import {
   Currency,
   Logout,
 } from '../Icons/Menu';
-import { GlobalDispatchContext } from '../../context/globalContext';
-import { clearLocalStorage } from '../../utils/localStorage';
-import { history } from '../../context/history';
 import { Loading } from '../ScreenCases';
 
 const purpleLogo = require('../../assets/images/logo-invertida.png');
@@ -32,49 +30,39 @@ const menuOptions = [
   { icon: <Currency />, title: 'Câmbio', to: '/cambio' },
 ];
 
-function Menu() {
-  const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const dispatch = useContext(GlobalDispatchContext);
-
-  const toggleOpen = () => {
-    setOpen(!open);
-  };
-
-  const logOut = () => {
-    setLoading(true);
-    dispatch({ type: 'LOG_OUT_USER' });
-    clearLocalStorage();
-    history.push('/');
-    setLoading(false);
-  };
-
+function Menu({ menuOpen, loading, toggleOpen, logOut, turnOffMenu }) {
   return (
-    <MenuContainer open={open}>
-      <MenuTopContainer open={open}>
+    <MenuContainer open={menuOpen}>
+      <MenuTopContainer open={menuOpen}>
         <Link to="/dashboard">
           <Logo src={purpleLogo} alt="Logo para home" />
         </Link>
         <>
           {menuOptions.map((nav) => {
             return (
-              <NavLinkContainer open={open} key={nav.to} to={nav.to}>
+              <NavLinkContainer
+                onClick={turnOffMenu}
+                open={menuOpen}
+                key={nav.to}
+                to={nav.to}
+              >
                 {nav.icon}
-                <MenuOptionTitle open={open}>{nav.title}</MenuOptionTitle>
+                <MenuOptionTitle open={menuOpen}>{nav.title}</MenuOptionTitle>
               </NavLinkContainer>
             );
           })}
         </>
       </MenuTopContainer>
-      <MaterialIconMenu open={!open} onClick={toggleOpen}>
+      <MaterialIconMenu open={!menuOpen} onClick={toggleOpen}>
         menu
       </MaterialIconMenu>
-      <MaterialIconMenu open={open} onClick={toggleOpen}>
+      <MaterialIconMenu open={menuOpen} onClick={toggleOpen}>
         menu_open
       </MaterialIconMenu>
       <LogOut onClick={logOut}>
         <Logout />
       </LogOut>
+      <MaterialIconClose onClick={turnOffMenu}>close</MaterialIconClose>
       {loading && <Loading />}
     </MenuContainer>
   );

@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { HeaderContainer, Account } from './style';
-import { GlobalStateContext } from '../../context/globalContext';
+import { MaterialIcon } from '../Icons/Material/style';
 
 const bob = require('../../assets/images/bob.jpg');
 
-function Header() {
-  const { user } = useContext(GlobalStateContext);
-
-  const avatar = (user && user.avatar) || bob;
+function Header({ turnOnMenu }) {
+  const avatar = bob;
 
   return (
     <HeaderContainer>
+      <MaterialIcon onClick={turnOnMenu}>menu</MaterialIcon>
       <Account src={avatar} alt="imagem do usuário para configurar avatar" />
     </HeaderContainer>
   );
