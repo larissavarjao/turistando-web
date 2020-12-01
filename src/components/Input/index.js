@@ -28,3 +28,5 @@ export const InputLabel = ({
     </InputContainer>
   );
 };
+
+export { Label } from './style';

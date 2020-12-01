@@ -5,15 +5,17 @@ const DefaultButton = styled.button`
   padding: 8px;
   font-size: 15px;
   display: block;
-  box-shadow: 0 0 0 0 #5b3cc4;
+  box-shadow: ${(props) => (props.disabled ? 'none' : '0 0 0 0 #5b3cc4')};
   transition: all 0.25s ease;
   border-radius: 35px;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   outline: none;
   min-height: 38px;
   width: ${(props) => props.width || '100px'};
   margin: ${(props) => props.margin || 0};
   text-transform: uppercase;
+  background: ${(props) =>
+    props.disabled && `${props.theme.grayDark} !important`};
 
   ${media.greaterThan('medium')`
     width: ${(props) => props.width || '150px'};
@@ -26,7 +28,8 @@ export const PrimaryButton = styled(DefaultButton)`
   background: ${(props) => props.theme.primaryColor};
 
   &:hover {
-    box-shadow: 0 9px 28px -9px ${(props) => props.theme.primaryColor};
+    box-shadow: ${(props) =>
+      props.disabled ? 'none' : `0 9px 28px -9px ${props.theme.primaryColor}`};
   }
 `;
 

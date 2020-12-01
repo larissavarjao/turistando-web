@@ -2,6 +2,7 @@ import api from '../index';
 import { checkErrors } from '../../utils/errors';
 
 export const createTravel = async (travelObject) => {
+  console.log('entrei aqui', travelObject);
   try {
     return await api.post('/travels', travelObject);
   } catch (err) {

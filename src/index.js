@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { Router } from 'react-router-dom';
 
+import 'react-datepicker/dist/react-datepicker.css';
 import { theme, GlobalStyle } from './style/globalStyle';
 import App from './containers/App/index';
 import { history } from './context/history';
