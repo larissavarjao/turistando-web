@@ -30,7 +30,7 @@ const menuOptions = [
   { icon: <Currency />, title: 'Câmbio', to: '/cambio' },
 ];
 
-function Menu({ menuOpen, loading, toggleOpen, logOut, turnOffMenu }) {
+function Menu({ menuOpen, loading, turnOnMenu, logOut, turnOffMenu }) {
   return (
     <MenuContainer open={menuOpen}>
       <MenuTopContainer open={menuOpen}>
@@ -53,10 +53,10 @@ function Menu({ menuOpen, loading, toggleOpen, logOut, turnOffMenu }) {
           })}
         </>
       </MenuTopContainer>
-      <MaterialIconMenu open={!menuOpen} onClick={toggleOpen}>
+      <MaterialIconMenu open={!menuOpen} onClick={turnOnMenu}>
         menu
       </MaterialIconMenu>
-      <MaterialIconMenu open={menuOpen} onClick={toggleOpen}>
+      <MaterialIconMenu open={menuOpen} onClick={turnOffMenu}>
         menu_open
       </MaterialIconMenu>
       <LogOut onClick={logOut}>

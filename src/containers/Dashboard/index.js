@@ -18,10 +18,6 @@ function Dashboard() {
   const [loading, setLoading] = useState(false);
   const dispatch = useContext(GlobalDispatchContext);
 
-  const toggleMenuOpen = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   const turnOffMenu = () => setMenuOpen(false);
   const turnOnMenu = () => setMenuOpen(true);
 
@@ -37,9 +33,9 @@ function Dashboard() {
     <Container>
       <Menu
         menuOpen={menuOpen}
-        toggleMenuOpen={toggleMenuOpen}
         logOut={logOut}
         loading={loading}
+        turnOnMenu={turnOnMenu}
         turnOffMenu={turnOffMenu}
       />
       <RightContainer>
