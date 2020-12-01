@@ -12,6 +12,7 @@ export const MenuContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  z-index: 9;
 
   ${media.greaterThan('medium')`
     background: ${(props) => props.theme.white};
@@ -75,6 +76,7 @@ export const NavLinkContainer = styled(NavLink)`
       margin-right: ${(props) => props.open && '24px'};
       transition: 0.5s ease-in-out;
       fill: ${(props) => props.theme.gray};
+      display: block;
     }
 
     &.active,

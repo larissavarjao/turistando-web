@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import { MaterialIcon } from '../Icons/Material/style';
 
 export const HeaderContainer = styled.div`
   background: ${(props) => props.theme.white};
@@ -32,4 +33,10 @@ export const PageHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+`;
+
+export const MaterialIconMenu = styled(MaterialIcon)`
+  ${media.greaterThan('medium')`
+    display: none;
+  `};
 `;
