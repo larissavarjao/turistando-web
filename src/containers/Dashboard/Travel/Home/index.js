@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
+
 import { GlobalStateContext } from '../../../../context/globalContext';
 import { getAllTravels } from '../../../../api/travel';
 import { Loading, Error, Empty } from '../../../../components/ScreenCases';
-import { Container } from './style';
+import { Container, TravelsContainer, Travel, TravelDate } from './style';
 import { RoundedButton } from '../../../../components/Button';
 import { PageHeader } from '../../../../components/Header';
-import { Title } from '../../../../components/Typography';
+import { Title, SubSubTitle } from '../../../../components/Typography';
 import { history } from '../../../../context/history';
+import { formatDate } from '../../../../utils/date';
 
 function TravelHome() {
   const state = useContext(GlobalStateContext);
@@ -42,6 +44,8 @@ function TravelHome() {
     getTravels();
   }, [state.user]);
 
+  const goToTravelDetail = (id) => history.push(`/viagem/${id}`);
+
   return (
     <Container>
       <PageHeader>
@@ -54,11 +58,18 @@ function TravelHome() {
         <Empty message="Você não possui viagens. Para adicionar, só clicar no botão acima." />
       )}
       {travels && travels.length > 0 && (
-        <div>
+        <TravelsContainer>
           {travels.map((travel) => (
-            <div>{travel.title}</div>
+            <Travel key={travel.id} onClick={() => goToTravelDetail(travel.id)}>
+              <SubSubTitle>{travel.title}</SubSubTitle>
+              {travel.startDate && travel.endDate && (
+                <TravelDate>{`${formatDate(travel.startDate)} - ${formatDate(
+                  travel.endDate
+                )}`}</TravelDate>
+              )}
+            </Travel>
           ))}
-        </div>
+        </TravelsContainer>
       )}
     </Container>
   );

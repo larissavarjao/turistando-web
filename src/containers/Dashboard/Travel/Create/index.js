@@ -50,10 +50,8 @@ function TravelCreate() {
   const onSubmit = async (e) => {
     e.preventDefault();
     startLoading();
-    console.log('get here');
 
     const validation = areFieldsValid();
-    console.log({ validation });
 
     if (!validation) return;
 
@@ -63,8 +61,6 @@ function TravelCreate() {
         startDate,
         endDate,
       };
-
-      console.log({ travelObject });
 
       await createTravel(travelObject);
 
